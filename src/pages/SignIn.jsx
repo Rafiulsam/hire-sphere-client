@@ -3,6 +3,7 @@ import { AuthContext } from '../context/AuthContext/AuthContext';
 import Lottie from 'lottie-react';
 import sigInAnimation from '../assets/signIn.json'
 import { useNavigate } from 'react-router-dom';
+import SocialLogin from '../components/SocialLogin';
 
 
 
@@ -50,6 +51,7 @@ const SignIn = () => {
                                 <button className="btn btn-neutral mt-4">Sign In</button>
                             </fieldset>
                         </form>
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>

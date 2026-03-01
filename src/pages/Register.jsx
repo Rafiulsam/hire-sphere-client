@@ -3,6 +3,7 @@ import registerAnimation from '../assets/register.json'
 import { use } from 'react';
 import { AuthContext } from '../context/AuthContext/AuthContext';
 import { NavLink, useNavigate } from 'react-router-dom';
+import SocialLogin from '../components/SocialLogin';
 
 const Register = () => {
 
@@ -49,6 +50,7 @@ const Register = () => {
                                 <button className="btn btn-neutral mt-4">Register</button>
                             </fieldset>
                         </form>
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>
