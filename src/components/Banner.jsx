@@ -27,7 +27,7 @@ const Banner = () => {
                             transition: { duration: 4, repeat: Infinity }
                         }}
                     >Job!</motion.span> </h1>
-                    <p className="py-6">
+                    <p className="py-6 text-gray-400">
                         Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                         quasi. In deleniti eaque aut repudiandae et a id nisi.
                     </p>
