@@ -1,11 +1,11 @@
 import React from 'react';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { TbCurrencyTaka } from 'react-icons/tb';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const JobDetails = () => {
 
-    const { title, company, location, requirements, status, hr_email, hr_name, jobType, description, salaryRange, applicationDeadline, responsibilities, category } = useLoaderData();
+    const { _id, title, company, location, requirements, jobType, description, salaryRange, applicationDeadline, responsibilities, category } = useLoaderData();
 
     return (
         <div className='container mx-auto'>
@@ -15,7 +15,9 @@ const JobDetails = () => {
                     <p className=' mt-2 text-xl text-gray-300'>{company}</p>
                     <p className='mt-4 text-lg text-gray-500 flex items-center gap-1'><FaMapMarkerAlt /> {location}</p>
                 </div>
-                <button className='btn btn-primary'>Apply Now</button>
+                <Link to={`/applyJob/${_id}`} >
+                    <button className='btn btn-primary'>Apply Now</button>
+                </Link>
             </div>
 
             <div className='p-10 flex '>
@@ -49,7 +51,9 @@ const JobDetails = () => {
                     <p className='text-gray-300 mt-6'><span className='font-bold'>Category:</span> {category}</p>
                     <p className='text-gray-300 mt-6'><span className='font-bold'>Job Type:</span> {jobType}</p>
                     <p className='text-gray-300 mt-6'><span className='font-bold'>Application Deadline:</span> {applicationDeadline}</p>
+                    <Link to={`/applyJob/${_id}`}>
                     <button className='btn btn-primary mt-10 w-full'>Apply for this job</button>
+                    </Link>
                 </div>
             </div>
         </div>

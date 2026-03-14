@@ -2,13 +2,16 @@ import React, { use } from 'react';
 import { AuthContext } from '../context/AuthContext/AuthContext';
 import Lottie from 'lottie-react';
 import sigInAnimation from '../assets/signIn.json'
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../components/SocialLogin';
 
-
-
 const SignIn = () => {
+
     //redirect after sign in
+    const location = useLocation();
+    console.log('sign in location:', location);
+    const from = location.state|| '/';
+    console.log("from:", from);
     const navigate = useNavigate();
 
     const { signIn } = use(AuthContext);
@@ -24,9 +27,9 @@ const SignIn = () => {
             .then(result => {
                 const signedInUser = result.user;
                 console.log(signedInUser);
+                navigate(from);
                 form.reset();
                 // alert('Sign In Successful');
-                navigate('/');
             })
             .catch(error => console.error(error));
     }
