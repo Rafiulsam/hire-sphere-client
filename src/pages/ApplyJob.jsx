@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import useAuth from '../Hooks/useAuth';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const ApplyJob = () => {
 
@@ -33,6 +34,15 @@ const ApplyJob = () => {
             .then(response => {
                 console.log('Application submitted successfully:', response.data);
                 // Handle success (e.g., show a success message, redirect, etc.)
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Application submitted successfully!",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    size: "small"
+                    
+                });
             })
             .catch(error => {
                 console.error('Error submitting application:', error);
@@ -43,7 +53,7 @@ const ApplyJob = () => {
     return (
         <div>
             <h1 className='text-4xl'>Apply for Job</h1>
-            <form  className='mt-10 flex justify-center items-center mb-20' onSubmit={handleApply}>
+            <form className='mt-10 flex justify-center items-center mb-20' onSubmit={handleApply}>
                 <fieldset className="fieldset bg-base-300 w-1/2 border-base-300 rounded-box border p-6">
                     <legend className="legend text-lg font-bold">Application Details</legend>
                     <label className="label">Full Name</label>
@@ -56,7 +66,7 @@ const ApplyJob = () => {
 
                     <label className="label">Portfolio Link</label>
                     <input type="url" name="portfolio" className="input w-full" placeholder="e.g: https://your-portfolio.com    " />
-                    <input type="submit" className='btn btn-primary mt-6 w-full' value="Submit Application" />       
+                    <input type="submit" className='btn btn-primary mt-6 w-full' value="Submit Application" />
                 </fieldset>
             </form>
         </div>
