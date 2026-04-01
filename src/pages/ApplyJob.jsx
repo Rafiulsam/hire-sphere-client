@@ -40,7 +40,6 @@ const ApplyJob = () => {
                     title: "Application submitted successfully!",
                     showConfirmButton: false,
                     timer: 2000,
-                    size: "small"
                     
                 });
             })

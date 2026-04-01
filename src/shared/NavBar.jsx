@@ -6,9 +6,17 @@ const NavBar = () => {
 
     const {userSignOut, user} = use(AuthContext)
 
+    const username = user?.email?.split("@")[0];
+
     const link = <>
         <li><NavLink to='/'>Home</NavLink></li>
+        {
+        user && <> <li><NavLink to='/my-applications'>My Applications</NavLink></li></>   
+    }
     </>
+
+    
+
     return (
         <div className="navbar bg-base-100 shadow-sm">
             <div className="navbar-start">
@@ -33,7 +41,7 @@ const NavBar = () => {
                 {
                     user ? 
                     <>
-                    <p>{user.email}</p>
+                    <p className="mr-4">{username}</p>
                     
                     <button onClick={userSignOut} className="btn btn-neutral">Sign Out</button> 
                     </>:
