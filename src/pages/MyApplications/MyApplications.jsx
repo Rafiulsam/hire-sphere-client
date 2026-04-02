@@ -10,7 +10,7 @@ const MyApplications = () => {
 
     return (
         <div>
-            <h1 className="text-4xl">My Applications</h1>
+            <h1 className="text-4xl text-center mt-10">My Applications</h1>
            <Suspense fallback={<Loader></Loader>}>
              <MyApplicationsList
                 applicationPromise={applicationPromise(user.email)}

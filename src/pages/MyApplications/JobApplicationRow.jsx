@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const JobApplicationRow = ({ application, index }) => {
 
-    const { company, title, company_logo, location } = application;
+    const { company, title, company_logo, location, jobId } = application;
+    console.log(application);
     return (
         <tr>
             <th>
@@ -30,7 +32,9 @@ const JobApplicationRow = ({ application, index }) => {
             </td>
             <td>Pending</td>
             <th>
-                <button className="btn btn-ghost btn-xs">details</button>
+                <Link to={`/jobs/${jobId}`}>
+                    <button className="btn btn-ghost btn-xs">Details</button>
+                </Link>
             </th>
         </tr>
     );
