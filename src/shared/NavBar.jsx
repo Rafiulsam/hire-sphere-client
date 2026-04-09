@@ -10,9 +10,15 @@ const NavBar = () => {
 
     const link = <>
         <li><NavLink to='/'>Home</NavLink></li>
+        {/*  for applicant */}
         {
         user && <> <li><NavLink to='/my-applications'>My Applications</NavLink></li></>   
     }
+
+        {/* for employer */}
+        {
+        user && <> <li><NavLink to='/add-jobs'>Add Jobs</NavLink></li></>
+        }
     </>
 
     
